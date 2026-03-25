@@ -9,6 +9,9 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
+import os
+
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
 
 AUTH_USER_MODEL = "accounts.User"
 
@@ -27,7 +30,8 @@ SECRET_KEY = 'django-insecure-m)_uz48rnnoas9h7_n7q)8pbiuxjybsq2hdy#+v^3_+ibk&q&8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+
 
 
 REST_FRAMEWORK = {
