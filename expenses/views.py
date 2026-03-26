@@ -20,7 +20,7 @@ class ExpenseDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ExpenseSerialaizers
     permission_classes = [IsAuthenticated]
 
-    def get_querset(self):
+    def get_queryset(self):
         return Expense.objects.filter(user=self.request.user)
 
 
